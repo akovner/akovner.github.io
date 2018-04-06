@@ -25,7 +25,6 @@ github_username:  akovner
 
 # Build settings
 markdown: kramdown
-theme: jekyll-theme-hacker
 plugins:
   - jekyll-feed
 
