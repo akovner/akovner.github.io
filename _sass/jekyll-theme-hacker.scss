@@ -223,9 +223,16 @@ hr {
   float: left;
 }
 
-.btn-github .icon {
+.btn-github .btn-linkedin .icon {
   opacity: 0.6;
+}
+
+.icon-github {
   background: url("../images/blacktocat.png") 0 0 no-repeat;
+}
+
+.icon-linkedin {
+  background: url("../images/In-Grey-14px.png") 0 0 no-repeat;
 }
 
 /* Links
