@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
 
 {% seo %}
   </head>
@@ -14,17 +15,17 @@
 
     <header>
       <div class="container">
-        <h1>{{ site.title | default: site.github.repository_name }}</h1>
-        <h2>{{ site.description | default: site.github.project_tagline }}</h2>
+        <a class="brand-logo" href="/"><img src="/assets/images/Codeling-64px.png" alt="Codeling" /></a>
+        <h2>"{{ site.motto }}"</h2>
+        <p class="author"><small>&#x2015; The Codeling</small></p>
 
-        <section id="downloads">
-          {% if site.show_downloads %}
-            <a href="{{ site.github.zip_url }}" class="btn">Download as .zip</a>
-            <a href="{{ site.github.tar_url }}" class="btn">Download as .tar.gz</a>
-          {% endif %}
-          <a href="https://github.com/akovner" class="btn btn-github"><span class="icon icon-github"></span>GitHub</a>
-          <a href="https://www.linkedin.com/in/alexkovner/" class="btn btn-linkedin"><span class="icon icon-linkedin"></span>Linkedin</a>
-        </section>
+        <div class="social-media">
+          <ul>
+            {% for item in site.social_media %}
+            <li><a href="{{ item.href }}"><i class="fab {{ item.fa_tag }}"></i></a></li>
+            {% endfor %}
+          </ul>
+        </div>
       </div>
     </header>
 

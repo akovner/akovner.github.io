@@ -1,17 +1,19 @@
 @import "rouge-base16-dark";
 @import "default_colors";
 
-$body-background: $cod-grey !default;
+$body-background: #666666 !default;
 $body-foreground: $gallery !default;
-$header: $conifer !default;
+$header: #30ceff !default;
 $blockquote-color: $silver-chalice !default;
 $blockquote-border: $dove-grey !default;
+$header-font-color: #30ceff;
+$link-font-color: #95ff53;
 
 body {
   margin: 0;
   padding: 0;
-  background: $body-background url("../images/bkg.png") 0 0;
   color: $body-foreground;
+  background-color: $body-background;
   font-size: 16px;
   line-height: 1.5;
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
@@ -47,18 +49,35 @@ li {
 header {
   background: rgba(0, 0, 0, 0.1);
   width: 100%;
-  border-bottom: 1px dashed $conifer; //header;
+  border-bottom: 1px dashed $header-font-color; //header;
   padding: 20px 0;
   margin: 0 0 40px 0;
+}
+
+.author {
+  text-align: center;
+}
+
+.social-media {
+  font-size: 36px;
+  color: $header-font-color;
+}
+
+.social-media li {
+  display: inline;
+}
+
+.social-media a {
+  color: $header-font-color;
 }
 
 header h1 {
   font-size: 30px;
   line-height: 1.5;
-  margin: 0 0 0 -40px;
+  margin: 0 0 0 0;
   font-weight: bold;
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
-  color: $conifer;//$header;
+  color: $header-font-color;//$header;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1),
                0 0 5px rgba(181, 232, 83, 0.1),
                0 0 10px rgba(181, 232, 83, 0.1);
@@ -66,15 +85,12 @@ header h1 {
   -webkit-font-smoothing: antialiased;
 }
 
-header h1:before {
-  content: "./ ";
-  font-size: 24px;
-}
-
 header h2 {
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 300;
-  color: #666;
+  color: $body-foreground;
+  text-align: center;
+  margin: 0 0 0 0;
 }
 
 #downloads .btn {
@@ -97,7 +113,7 @@ section img {
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
-  color: $header;
+  color: $header-font-color;
   letter-spacing: -0.03em;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1),
                0 0 5px rgba(181, 232, 83, 0.1),
@@ -139,7 +155,7 @@ dt {
 }
 
 ul li {
-  list-style-image:url('../images/bullet.png');
+  list-style-image:url('../images/bullet-4.png');
 }
 
 blockquote {
@@ -191,6 +207,14 @@ hr {
   color: #b5e853;
 }
 
+.brand-logo {
+  margin: 0 0 10px 0;
+  float: none;
+  text-align: center;
+  width: 100%;
+  display: block;
+}
+
 /* Buttons
 */
 
@@ -223,26 +247,18 @@ hr {
   float: left;
 }
 
-.btn-github .btn-linkedin .icon {
-  opacity: 0.6;
-}
-
-.icon-github {
-  background: url("../images/blacktocat.png") 0 0 no-repeat;
-}
-
-.icon-linkedin {
-  background: url("../images/In-Grey-14px.png") 0 0 no-repeat;
-}
-
 /* Links
    a, a:hover, a:visited
 */
 
-a {
-  color: #63c0f5;
+/* a {
+  color: $link-font-color;
   text-shadow: 0 0 5px rgba(104, 182, 255, 0.5);
-}
+} */
+/*
+a:visited {
+  color: $link-font-color
+} */
 
 /* Clearfix */
 
