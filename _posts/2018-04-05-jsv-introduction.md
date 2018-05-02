@@ -10,4 +10,4 @@ title: Introduction to jsv
 Motivation
 ----------
 
-the need for
+the need for [google](https://www.google.com), [cowork](https://www.platform24.co)

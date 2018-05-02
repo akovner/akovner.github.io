@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Alex Kovner's coding blog
+title: The Codeling
 email: blog@alexkovner.com
 description: >- # this means to ignore newlines until "baseurl:"
   I am a programmer and data scientist, and I'm finally getting the chance
@@ -21,7 +21,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   wander over all things software and data. Please join me on the journey!
 motto: I am the Codeling
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://blog.alexkovner.com" # the base hostname & protocol for your site, e.g. http://example.com
+url: "http://codeling.alexkovner.com" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  akovner
 repository: akovner/akovner.github.io
 

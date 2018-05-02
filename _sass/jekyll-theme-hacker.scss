@@ -1,13 +1,17 @@
 @import "rouge-base16-dark";
 @import "default_colors";
 
+$header-hue: 194;
+$link-hue: 34;
+$theme-color: hsl($header-hue, 100%, 60%);
 $body-background: #666666 !default;
 $body-foreground: $gallery !default;
-$header: #30ceff !default;
 $blockquote-color: $silver-chalice !default;
 $blockquote-border: $dove-grey !default;
-$header-font-color: #30ceff;
-$link-font-color: #95ff53;
+$header-font-color: hsl($header-hue, 100%, 59%);
+$link-font-color: hsl($link-hue, 100%, 59%);
+$visited-font-color: hsl($link-hue, 100%, 69%);
+$social-media: $link-font-color;
 
 body {
   margin: 0;
@@ -54,21 +58,29 @@ header {
   margin: 0 0 40px 0;
 }
 
-.author {
-  text-align: center;
+.tag-space {
+  margin-right: 7px;
 }
 
-.social-media {
-  font-size: 36px;
-  color: $header-font-color;
+.post-tag {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0 .5rem;
+  margin-right: .5rem;
+  border-radius: 4px;
+  font-size: 110%;
+  &:hover {
+    text-decoration: none;
+    background: rgba(0,0,0,1.0);
+  }
 }
 
-.social-media li {
-  display: inline;
-}
-
-.social-media a {
-  color: $header-font-color;
+.post-date {
+  display: inline-block;
+  font-size: 80%;
+  color: #eaeaea;
+  margin: 0;
+  padding: 0;
 }
 
 header h1 {
@@ -203,8 +215,8 @@ td {
 hr {
   height: 0;
   border: 0;
-  border-bottom: 1px dashed #b5e853;
-  color: #b5e853;
+  border-bottom: 1px dashed $header-font-color;
+  color: $header-font-color;
 }
 
 .brand-logo {
@@ -248,17 +260,46 @@ hr {
 }
 
 /* Links
-   a, a:hover, a:visited
-*/
+   a, a:hover, a:visited */
 
-/* a {
+
+a, a:hover {
   color: $link-font-color;
-  text-shadow: 0 0 5px rgba(104, 182, 255, 0.5);
-} */
-/*
+}
+
 a:visited {
-  color: $link-font-color
-} */
+  color: $visited-font-color
+}
+
+.author {
+  text-align: center;
+}
+
+.social-media {
+  font-size: 36px;
+}
+
+.social-media-header {
+  text-align: left;
+}
+
+.permalinks {
+  text-align: right;
+}
+
+.social-media ul {
+  display: inline;
+  list-style: none;
+  padding-left: 0;
+}
+
+.social-media li {
+  display: inline;
+}
+
+.social-media a {
+  color: $social-media;
+}
 
 /* Clearfix */
 
