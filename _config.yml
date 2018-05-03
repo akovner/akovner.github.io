@@ -16,9 +16,7 @@
 title: The Codeling
 email: blog@alexkovner.com
 description: >- # this means to ignore newlines until "baseurl:"
-  I am a programmer and data scientist, and I'm finally getting the chance
-  to explore technology without being tethered to a corporation. I like to
-  wander over all things software and data. Please join me on the journey!
+  A site dedicated to data science. Also the font of truth from the Codeling.
 motto: I am the Codeling
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://codeling.alexkovner.com" # the base hostname & protocol for your site, e.g. http://example.com
