@@ -55,10 +55,30 @@ This would convert to the following:
 
 {% highlight json %}
 #A{"key_1","key_2","key_3"}
-A{:"record_1",1234,true}
-A{:"record_2",5678,false}
+A{:"record_1",1234,t}
+A{:"record_2",5678,f}
 {% endhighlight %}
 
 Let's cover the basics. The first line defines (#) a new keymap, with the tag "A". Tags in jsv are just capital letters in sequence; essentially base 26 with A = 0, B = 1, etc. The values are represented as a list of json primitives, but they are enclosed in curly braces to indicate that they are part of a dictionary, not an array.
 
+I also compress the primitives ``true``, ``false``, and ``null`` to their first letter. The guiding principle here is readability to the knowledgable user; ``t``, ``f``, and ``n`` are still very readable. Transforming numbers into, say, base 64 would acheive compression, but would not be readable.
+
 There is one slight anomaly in the primitives, which is that the string primitives are prepended with a colon (:). This is to distinguish string primitive from keys. More on this later.
+
+### flat dictionary with extra fields
+
+It is always acceptable to have extra json key/value pairs in a dictionary. for example:
+{% highlight json %}
+{"key_1": "record_1", "key_2": 1234, "key_3", true}
+{"key_1": "record_2", "key_2": 5678, "key_3", false, "extra_key": null}
+{% endhighlight %}
+
+would turn into:
+
+{% highlight json %}
+#A{"key_1","key_2","key_3"}
+A{:"record_1",1234,t}
+A{:"record_2",5678,f,"extra_key":null}
+{% endhighlight %}
+
+Here ``null`` must be spelled out, since it is parse as true json, not jsv. This also explains why we use a colon before string values (as opposed to string keys). In keeping with json's philosophy of simple parsing, we need to know from the first character whether we are dealing with a string as a key or a value.
