@@ -69,16 +69,38 @@ There is one slight anomaly in the primitives, which is that the string primitiv
 
 It is always acceptable to have extra json key/value pairs in a dictionary. for example:
 {% highlight json %}
-{"key_1": "record_1", "key_2": 1234, "key_3", true}
-{"key_1": "record_2", "key_2": 5678, "key_3", false, "extra_key": null}
+{"key_1": "record_1", "key_2": 1234, "key_3", true, "extra_key_1": null}
+{"key_1": "record_2", "key_2": 5678, "key_3", false, "extra_key_2": {"subkey": false}}
 {% endhighlight %}
 
 would turn into:
 
 {% highlight json %}
 #A{"key_1","key_2","key_3"}
-A{:"record_1",1234,t}
-A{:"record_2",5678,f,"extra_key":null}
+A{:"record_1",1234,t,"extra_key_1":n}
+A{:"record_2",5678,f,"extra_key_2":{"subkey": false}}
 {% endhighlight %}
 
-Here ``null`` must be spelled out, since it is parse as true json, not jsv. This also explains why we use a colon before string values (as opposed to string keys). In keeping with json's philosophy of simple parsing, we need to know from the first character whether we are dealing with a string as a key or a value.
+Since the value under ``extra_key_2`` is a json object that is not in the keymap, I expect that most implementations will hand over parsing duties to the native json parser. As a result, the ``false`` value cannot be compressed to ``f``.
+
+It should also be clear why we use a colon before string values (as opposed to string keys). In keeping with json's philosophy of simple parsing, we need to know from the first character whether we are dealing with a string as a key or a value.
+
+### Arrays
+
+Json arrays usually serve one of two purposes:
+
+* variable length, but with similar objects (a traditional array).
+* fixed length, but with dissimilar objects (a tuple).
+
+To handle both cases, the last keymap in an array will be applied to all subsequent entries. Here is an exampe of a traditional array:
+
+{% highlight json %}
+[{"name":"Alice Andersen","age":33},{"name":"Bob Bell","age":44}]
+{% endhighlight %}
+
+which transforms to:
+
+{% highlight json %}
+#A[{"name","age"}]
+A[{"Alice Anderson",33},{"Bob Bell",44}]
+{% endhighlight %}
