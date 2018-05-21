@@ -54,14 +54,12 @@ Let's start with a flat dictionary of the kind that would easily be encoded with
 This would convert to the following:
 
 {% highlight json %}
-#A{"key_1","key_2","key_3"}
-A{:"record_1",1234,t}
-A{:"record_2",5678,f}
+#A{"keymap":{"key_1","key_2","key_3"}}
+A{:"record_1",1234,true}
+A{:"record_2",5678,false}
 {% endhighlight %}
 
 Let's cover the basics. The first line defines (#) a new keymap, with the tag "A". Tags in jsv are just capital letters in sequence; essentially base 26 with A = 0, B = 1, etc. The values are represented as a list of json primitives, but they are enclosed in curly braces to indicate that they are part of a dictionary, not an array.
-
-I also compress the primitives ``true``, ``false``, and ``null`` to their first letter. The guiding principle here is readability to the knowledgable user; ``t``, ``f``, and ``n`` are still very readable. Transforming numbers into, say, base 64 would acheive compression, but would not be readable.
 
 There is one slight anomaly in the primitives, which is that the string primitives are prepended with a colon (:). This is to distinguish string primitive from keys. More on this later.
 
@@ -77,13 +75,11 @@ would turn into:
 
 {% highlight json %}
 #A{"key_1","key_2","key_3"}
-A{:"record_1",1234,t,"extra_key_1":n}
-A{:"record_2",5678,f,"extra_key_2":{"subkey": false}}
+A{:"record_1",1234,true,"extra_key_1":null}
+A{:"record_2",5678,false,"extra_key_2":{"subkey": false}}
 {% endhighlight %}
 
-Since the value under ``extra_key_2`` is a json object that is not in the keymap, I expect that most implementations will hand over parsing duties to the native json parser. As a result, the ``false`` value cannot be compressed to ``f``.
-
-It should also be clear why we use a colon before string values (as opposed to string keys). In keeping with json's philosophy of simple parsing, we need to know from the first character whether we are dealing with a string as a key or a value.
+It should be clear why we use a colon before string values (as opposed to string keys). In keeping with json's philosophy of simple parsing, we need to know from the first character whether we are dealing with a string as a key or a value.
 
 ### Arrays
 
@@ -103,4 +99,10 @@ which transforms to:
 {% highlight json %}
 #A[{"name","age"}]
 A[{"Alice Anderson",33},{"Bob Bell",44}]
+{% endhighlight %}
+
+When using an array as a tuple, you must specify a keymap for each entry. if there are more values in the array than keys in the keymap, the jsv parser attempts to apply the last keymap. If that doesn't work, it simply records the value as a json object. for example:
+
+{% highlight json %}
+
 {% endhighlight %}
