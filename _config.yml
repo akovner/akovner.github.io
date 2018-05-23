@@ -22,6 +22,7 @@ baseurl: / # the subpath of your site, e.g. /blog
 url: https://codeling.alexkovner.com # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  akovner
 repository: akovner/akovner.github.io
+google_analytics: True
 
 # Build settings
 markdown: kramdown
