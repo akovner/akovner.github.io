@@ -74,21 +74,21 @@ It is always acceptable to have extra json key/value pairs in a dictionary. for 
 would turn into:
 
 {% highlight json %}
-#A{"key_1","key_2","key_3"}
+#A{"keymap":{"key_1","key_2","key_3"}}
 A{:"record_1",1234,true,"extra_key_1":null}
 A{:"record_2",5678,false,"extra_key_2":{"subkey": false}}
 {% endhighlight %}
 
 It should be clear why we use a colon before string values (as opposed to string keys). In keeping with json's philosophy of simple parsing, we need to know from the first character whether we are dealing with a string as a key or a value.
 
-### Arrays
+### arrays
 
 Json arrays usually serve one of two purposes:
 
 * variable length, but with similar objects (a traditional array).
 * fixed length, but with dissimilar objects (a tuple).
 
-To handle both cases, the last keymap in an array will be applied to all subsequent entries. Here is an exampe of a traditional array:
+To handle both cases, the last keymap in an array will be applied to all subsequent entries. Here is an example of a traditional array:
 
 {% highlight json %}
 [{"name":"Alice Andersen","age":33},{"name":"Bob Bell","age":44}]
@@ -97,12 +97,58 @@ To handle both cases, the last keymap in an array will be applied to all subsequ
 which transforms to:
 
 {% highlight json %}
-#A[{"name","age"}]
+#A{"keymap":[{"name","age"}]}
 A[{"Alice Anderson",33},{"Bob Bell",44}]
 {% endhighlight %}
 
-When using an array as a tuple, you must specify a keymap for each entry. if there are more values in the array than keys in the keymap, the jsv parser attempts to apply the last keymap. If that doesn't work, it simply records the value as a json object. for example:
+When using an array as a tuple, you must specify a keymap for each entry. if there are more values in the array than keys in the keymap, the jsv parser attempts to apply the last keymap. If that doesn't work, it simply records the value as a json object. For example:
 
 {% highlight json %}
-
+[{"first-tuple-entry":1},{"later-tuple-entries":2},{"later-tuple-entries":3},{"other":4}]
 {% endhighlight %}
+
+becomes:
+
+{% highlight json %}
+#A{"keymap":[{"first-tuple-entry"},{"later-tuple-entries"}]}
+A[{1},{2},{3},{"other":4}]
+{% endhighlight %}
+
+## Compressions
+
+Moving the keys to metadata via a keymap creates significant compression, but there is still considerable redundancy possible in values. A separate part of a definition is the *compression* section, which allows compression rules on the values. Returning to our first example:
+
+{% highlight json %}
+{"key_1": "record_1", "key_2": 1234, "key_3", true}
+{"key_1": "record_2", "key_2": 5678, "key_3", false}
+{% endhighlight %}
+
+could become:
+
+{% highlight json %}
+#A{"keymap":{"key_1","key_2","key_3"},"compression":[{"value":true,"token":"t"},{"value":false,"token":"f"}]}
+A{:"record_1",1234,t}
+A{:"record_2",5678,f}
+{% endhighlight %}
+
+This could also be used for strings. For example, if the string ``"record_2"`` were to be repeated, a compression could be defined for it:
+
+{% highlight json %}
+#A{"keymap":{"key_1","key_2","key_3"},"compression":[{"value":true,"token":"t"},{"value":false,"token":"f"}]}
+A{:"record_1",1234,t}
+&A{"compression":[{"value":"record_2","token":"R2"}]}
+A{:R2,5678,f}
+{% endhighlight %}
+
+### modifications
+
+In the previous example, I also slipped in a new concept: modifications. with the ``&`` identifier, a definition can be modified mid-stream. This allows implementations to perform compressions on the fly. For example, if the user knows that a particular string field takes on only a small number of values (an *enum*, essentially) then it can tell the implementation to treat it that way *without enumerating the values ahead of time*. This will make jsv much easier to use.
+
+More on this feature in a later post.
+
+Conclusion
+----------
+
+A simple, compressed, readable, text-based representation for large numbers of json records is possible. Creating such a format as a standard across languages will be a significant advantage to the big data infrastructure, occupying a niche between jsonlines and binary formats.
+
+My goal here has been to flesh out the basics of this format. It is by no means fully formed, and I welcome any and all input. Also, follow my progress on the first (python) implementation on [github](https://github.com/akovner/json-separated-values).
