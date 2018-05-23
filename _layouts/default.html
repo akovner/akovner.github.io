@@ -21,22 +21,19 @@
         <p class="author"><small>&#x2015; The Codeling</small></p>
 
         <div class="row">
-          <div class="col-md-6">
-            <div class="social-media social-media-header">
-              <ul>
-                {% for item in site.social_media %}
-                <li><a href="{{ item.href }}"><i class="fab {{ item.fa_tag }}"></i></a></li>
-                {% endfor %}
-              </ul>
-            </div>
+          <div class="col-md-6 social-media social-media-header">
+            <ul>
+              {% for item in site.social_media %}
+              <li><a href="{{ item.href }}"><i class="fab {{ item.fa_tag }}"></i></a></li>
+              {% endfor %}
+            </ul>
           </div>
-          <div class="col-md-6">
-            <div class="social-media permalinks">
-              <ul>
-                <li><a href="/about/">about</a></li>
-                <li><a href="/">home</a></li>
-              </ul>
-            </div>
+          <div class="col-md-6 bottom-align social-media permalinks">
+            <ul>
+              <li><small><a href="/">home</a></small></li>
+              <li><small><a href="/tags/">tags</a></small></li>
+              <li><small><a href="/about/">about</a></small></li>
+            </ul>
           </div>
         </div>
       </div>

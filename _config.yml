@@ -14,14 +14,12 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: The Codeling
-email: blog@alexkovner.com
+email: codeling@alexkovner.com
 description: >- # this means to ignore newlines until "baseurl:"
-  I am a programmer and data scientist, and I'm finally getting the chance
-  to explore technology without being tethered to a corporation. I like to
-  wander over all things software and data. Please join me on the journey!
+  A site dedicated to data science. Also the oracle of the Codeling.
 motto: I am the Codeling
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://codeling.alexkovner.com" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: / # the subpath of your site, e.g. /blog
+url: https://codeling.alexkovner.com # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  akovner
 repository: akovner/akovner.github.io
 

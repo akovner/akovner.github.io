@@ -58,6 +58,10 @@ header {
   margin: 0 0 40px 0;
 }
 
+.err-msg {
+  text-align: center;
+}
+
 .tag-space {
   margin-right: 7px;
 }
@@ -276,12 +280,13 @@ a:visited {
 }
 
 .social-media {
-  font-size: 36px;
+  font-size: 28px;
 }
 
 .social-media-header {
   text-align: left;
 }
+
 
 .permalinks {
   text-align: right;
