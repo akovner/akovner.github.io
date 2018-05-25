@@ -92,6 +92,7 @@ To handle both cases, the last keymap in an array will be applied to all subsequ
 
 {% highlight json %}
 [{"name":"Alice Andersen","age":33},{"name":"Bob Bell","age":44}]
+[{"name":"Cookie Monster","age":7},{"name":"Big Bird","age":13},{"name":"Elmo","age":3}]
 {% endhighlight %}
 
 which transforms to:
@@ -99,6 +100,7 @@ which transforms to:
 {% highlight json %}
 #A{"keymap":[{"name","age"}]}
 A[{"Alice Anderson",33},{"Bob Bell",44}]
+A[{:"Cookie Monster",7},{:"Big Bird",13},{:"Elmo",3}]
 {% endhighlight %}
 
 When using an array as a tuple, you must specify a keymap for each entry. if there are more values in the array than keys in the keymap, the jsv parser attempts to apply the last keymap. If that doesn't work, it simply records the value as a json object. For example:
@@ -149,6 +151,6 @@ More on this feature in a later post.
 Conclusion
 ----------
 
-A simple, compressed, readable, text-based representation for large numbers of json records is possible. Creating such a format as a standard across languages will be a significant advantage to the big data infrastructure, occupying a niche between jsonlines and binary formats.
+A simple, compressed, readable, text-based representation for large numbers of json records is possible. Creating such a format as a standard across languages will be a significant advantage to the big data infrastructure, occupying a niche between json lines and binary formats.
 
 My goal here has been to flesh out the basics of this format. It is by no means fully formed, and I welcome any and all input. Also, follow my progress on the first (python) implementation on [github](https://github.com/akovner/json-separated-values).
