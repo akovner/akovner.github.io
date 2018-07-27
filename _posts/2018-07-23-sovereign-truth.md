@@ -1,5 +1,5 @@
 ---
-category: sampled democracy
+category: sampled-democracy
 tags:
   - jurga
   - sampled democracy
