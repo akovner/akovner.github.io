@@ -1,0 +1,44 @@
+---
+date: 2021-02-25
+title: Voters just want politics to work
+---
+
+# Voters Just Want Politics to Work
+
+I previously discussed why political theorists should start with the state apparatus, and ask what the state needs to act in a democratic way, rather than starting with the people and trying to reason a priori towards political structures. While this approach is uncommon among academics, it comes closer to meeting the political demands of ordinary people.
+
+The fact is that most citizens don’t really want to be bothered by politics. Rates of participation in many democracies are barely above 50% for voting, and much lower for other forms of political activism. In addition, participation follows a U-shaped distribution, dominated by the extremes. This is a big problem for forms of democracy that depend upon mass citizen engagement for their legitimacy. Other areas of daily life do not require uncompensated participation to function. When I go to the coffee shop in the morning, my beverage is just there, waiting for me; I need not involve myself in its production in any way other than to pay for it. If I am involved in its production, I do so as a paid employee.
+
+This dynamic has, of course, led to the attraction of laissez-faire models in the political space. While the negative consequences of unfettered capitalism are not small, I think too many progressives dismiss the fact that most people have a largely positive relationship with commerce in their daily lives, something that they do not have with the state. They experience the state through noisy, misinformed media spaces reporting on political systems that don’t work. But why don’t they work?
+
+I have a simple answer to this: contemporary political structures are built on a flawed decision-making model. Under the theory of political representation, democracy works by electing representatives, then throwing them in a room together and expecting coherent leadership to emerge. But why should it? Just because these folks are “representatives” doesn’t mean they share a common purpose beyond slogans like “do the people’s business”. And they often have strong incentives not to get along, as they don’t really compete to make policy so much as to get credit (or avoid blame) for policy.
+
+The result is one of two conditions. First, the system can fall into stalemate or gridlock when none of the competing factions can overcome the effective vetos held by others. This condition is most common in bicameral legislatures or in presidential systems with explicit veto powers, but it can also happen in parliamentary systems when an election fails to produced a clear winner. Second, the system may be dominated by a single faction. This is more common in parliamentary systems when a single party or coalition achieves a clear electoral victory. While the government can at least function in this case, it is hardly gratifying from a democratic point of view to give 51% of the population 100% of the power.
+
+Government just isn’t like other organizations in terms of how it can make decisions. Private organizations can choose their own leaders; when certain leaders find themselves at variance with others, they either suppress their own views or resign in protest. Or perhaps they write a strongly worded letter to the board of directors. Fundamentally, however, deep disagreements in single organizations get resolved when one side wins. The legislative assembly is not a single organization in this sense. Such bodies have no external competition to unite them, and its members are not elected (or randomly selected) with any mandate to ensure that the institution itself succeeds. Indeed, in highly polarized environments members are often motivated to destroy the assembly as a functioning institution, though this goal is often couched in the language of reform.
+
+This leads to the oft-quoted observation that politicians should never let a crisis go to waste. It turns out that only a serious crisis is sufficient to galvanize a legislature to act, and even in this case the action is highly partisan, with the ruling coalition getting everything they want, while even a large minority gets nothing. This is what most citizens see in their government: an assembly that is nominally unified but practically a cesspool of factionalism. We need to stop blaming individual politicians for this. It’s just the way the assembly is built.
+
+Most political observers have experienced the fact that there is often more suspense about the parliamentary procedures used to get to a conclusion than about the conclusion itself. This is the ultimate indication of the structural failure of the assembly: nominally, its rules exist to approximate proportionality in lawmaking, but practically they are just a thicket of obstacles to be used to advantage. What we seek is exactly the opposite. A functioning legislature must be procedurally inevitable but substantively uncertain until the final decision is made.
+
+Substantive uncertainty is easy to achieve: just use a citizen jury to make the final decision from a short list of proposals. I have discussed this extensively before in both the superminority principle and other citizen jury posts.
+
+Procedural inevitability is a bit harder, but not much. It basically involves creating the agenda. The “inevitability” part is simply this: every item placed on the agenda will be carried all the way to a verdict rendered by a citizen jury. There can be no obstruction or delay; the entire procedure will meet each milestone on time, every time. This is possible with the superminority principle, since non-participation by any faction just empowers rival factions.
+
+The simplest way to create the agenda is just to treat it like another proposal. At the beginning of each legislative session, the superminority rule produces a small number of potential agendas that go to a citizen jury for selection. Other methods may be needed to supplement this process for emergencies: perhaps the executive may submit agenda items under limited circumstances. Proposals passed this way would only be temporary (so that they are not simply an end run around the normal process) and might be limited as to budget and scope. The one thing that must happen in all cases is that once an agenda item is added, the rest of the process is completely automatic.
+
+To summarize, there are two criteria that an assembly must meet to be able to function:
+
+1. **Procedural inevitability –** All agenda items will be carried to a final decision on a fixed schedule, according to a predefined set of rules.
+
+1. **Substantive uncertainty –** Those writing proposals should be uncertain as to the outcome. This uncertainty should be structural; that is, it shouldn’t depend on contingent factors such as the particular composition of the assembly, or vote counting on a particular issue.
+
+These factors are important because they have nothing to do with democracy or representation. In theory, we could build an aristocracy this way, just by selecting the jury only from aristocrats. I’m not advocating this, of course. I point this out instead to illustrate the fact that these are purely decision making requirements. These cannot be generated by any theory of representation.
+
+It’s also clear that a traditional assembly can never meet these requirements no matter how its members are selected. The problem is that there is no guarantee that a majority can be mustered for any proposal. This is because a majority can both approve its own measure, or simply block anyone else if they are so inclined.
+
+In theory this is also possible under the superminority principle. But it becomes practically impossible as the threshold is lowered. For three proposals, the proposing threshold is 25% + 1. This means that 75% would be required to block all other proposals, a near impossibility in any assembly of even modest diversity. The blocking threshold increases as the number of proposals increases.
+
+There is a second reason the superminority principle will always produce proposals: there is no need for traditional parliamentary rules. Parliamentary procedure depends on the premise that the body will produce a single proposal. Once we implement the superminority principle, members self-organize into groups that can proceed according to whatever rules they wish. The only requirement is that they produce a proposal that is supported by a sufficient number of members by the appointed deadline.
+
+A legislature constructed this way is unquestionably democratic as long as the citizen jury is selected properly. All proposals are written by professionals who themselves have an electoral mandate, though the mandate is reduced in that they no longer make final decisions. There is no obstruction, there are no tactics. An agenda will be defined and carried out during each legislative session. Democracy can just work.
