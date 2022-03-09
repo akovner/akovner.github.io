@@ -1,5 +1,5 @@
-# Home
+## Posts
 
 {% for post in site.posts %}
-  {{post.date}} [{{ post.title }}]({{post.url}})
+  {{ post.date | date: "%-d %B %Y" }} [{{ post.title }}]({{ post.url }})
 {% endfor %}
