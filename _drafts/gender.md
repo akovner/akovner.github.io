@@ -1,0 +1,4 @@
+# On Gender in the trans-verse
+
+In one short generation much of the west was seen gender expression go from a mostly uncontested binary to a bloody battlefield littered with the corpses of every conceivable theory of sex and gender. The battles that have created this space have injured us all, partly because they strike deeply at the core of how we see ourselves and partly because they depend on unverifiable assertions that have no concrete implications beyond the speaker. Sorting out this melange of biology, identity, politics, and metaphysics is painful, and like many thoughtful people I have avoided attempting it for a long time in the hope that some middling consensus would emerge that would satisfy no one but would allow most people to go about their merry way. But that has not happened, so now I must undertake a systematic reckoning with gender as a cultural concept.
+
